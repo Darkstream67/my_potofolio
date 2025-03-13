@@ -571,31 +571,31 @@ function animateSkillBars() {
     });
 }
 
-// Contact form handling
-function handleContactForm() {
-    const form = document.getElementById('contact-form');
+// // Contact form handling
+// function handleContactForm() {
+//     const form = document.getElementById('contact-form');
     
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+//     form.addEventListener('submit', (e) => {
+//         e.preventDefault();
         
-        // Here you would normally send the form data to a server
-        // For this example, we'll just simulate a successful submission
+//         // Here you would normally send the form data to a server
+//         // For this example, we'll just simulate a successful submission
         
-        const submitButton = form.querySelector('button[type="submit"]');
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitButton.disabled = true;
+//         const submitButton = form.querySelector('button[type="submit"]');
+//         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+//         submitButton.disabled = true;
         
-        setTimeout(() => {
-            form.reset();
-            submitButton.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+//         setTimeout(() => {
+//             form.reset();
+//             submitButton.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
             
-            setTimeout(() => {
-                submitButton.innerHTML = 'Send Message';
-                submitButton.disabled = false;
-            }, 3000);
-        }, 2000);
-    });
-}
+//             setTimeout(() => {
+//                 submitButton.innerHTML = 'Send Message';
+//                 submitButton.disabled = false;
+//             }, 3000);
+//         }, 2000);
+//     });
+// }
 
 // Initialize everything when the page loads
 window.addEventListener('DOMContentLoaded', () => {

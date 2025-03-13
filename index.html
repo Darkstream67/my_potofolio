@@ -11,6 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </head>
 <body>
+
+    <div id="scroll"></div>
+  
+
     <!-- Main Canvas for Three.js -->
     <canvas id="bg-canvas"></canvas>
 
@@ -345,7 +349,7 @@
                     <a href="#" class="social-link"><i class="fab fa-reddit-alien"></i></a>
                 </div>
             </div>
-            <div class="contact-form">
+            <!-- <div class="contact-form">
                 <form id="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -365,7 +369,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -381,7 +385,14 @@
             <p class="copyright">© 2025 Darkstream. All rights reserved.</p>
         </div>
     </footer>
-
+    <script>
+        let scroll1 = document.getElementById('scroll')
+        let h = document.body.scrollHeight - window.innerHeight
+        window.onscroll = function () {
+            let s = (window.pageYOffset / h) * 100
+            scroll1.style.height = s + "%"
+        }
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
