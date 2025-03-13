@@ -3,12 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Developer Section</title>
+    <title>Darkstream - Roblox Developer & Game Creator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </head>
 <body>
-    <div class="floating-container">
-        <p class="floating-text">Odhila my <span class="coloo">Darling!</span></p>
+    <!-- Main Canvas for Three.js -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <div class="loading-text">
+            <h2>INITIALIZING</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <p class="loading-status">Loading assets...</p>
+        </div>
     </div>
+
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">D</div>
+            <a href="#home" class="logo">Darkstream</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Darkstream</span></h1>
+                <h2>Roblox Developer & Game Creator</h2>
+                <p>Crafting immersive digital experiences and game worlds that players love to explore.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-cube"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <div class="image-frame">
+                    <img src="https://via.placeholder.com/500x500" alt="Darkstream - Roblox Developer">
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Turning Ideas Into Virtual Realities</h3>
+                <p>I'm a passionate Roblox developer with 5+ years of experience creating immersive games and experiences that have amassed over 25 million visits. My journey began with simple obstacle courses and has evolved into complex role-playing games, simulators, and adventure experiences.</p>
+                <p>I specialize in Lua scripting, game mechanics design, and creating engaging user experiences that keep players coming back. My technical expertise, combined with a strong creative vision, allows me to transform concepts into polished, high-performing games.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h4>25M+</h4>
+                        <p>Total Visits</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>15+</h4>
+                        <p>Games Created</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>500K+</h4>
+                        <p>Active Players</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>5+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="section-header">
+            <h2>My Skills</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <div class="skill-info">
+                            <h4>Lua Scripting</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-server"></i></div>
+                        <div class="skill-info">
+                            <h4>Server Architecture</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="skill-info">
+                            <h4>UI/UX Design</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Game Design</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                        <div class="skill-info">
+                            <h4>Game Mechanics</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-users"></i></div>
+                        <div class="skill-info">
+                            <h4>Player Engagement</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="skill-info">
+                            <h4>Monetization</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Creative</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <div class="skill-info">
+                            <h4>3D Modeling</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-edit"></i></div>
+                        <div class="skill-info">
+                            <h4>Level Design</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-video"></i></div>
+                        <div class="skill-info">
+                            <h4>Animation</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Zombie Apocalypse">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Play Game</a>
+                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Zombie Apocalypse</h3>
+                    <p>A thrilling survival horror experience where players team up to survive increasingly difficult waves of zombies while scavenging for resources and unlocking new areas.</p>
+                    <div class="project-meta">
+                        <span class="project-stat"><i class="fas fa-eye"></i> 10M+ Visits</span>
+                        <span class="project-stat"><i class="fas fa-star"></i> 4.8/5 Rating</span>
+                    </div>
+                    <div class="project-tags">
+                        <span>Survival</span>
+                        <span>Horror</span>
+                        <span>Multiplayer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Space Tycoon">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Play Game</a>
+                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Space Tycoon</h3>
+                    <p>Build and manage your own galactic empire in this immersive tycoon experience. Research new technologies, mine resources, and expand your territory across the cosmos.</p>
+                    <div class="project-meta">
+                        <span class="project-stat"><i class="fas fa-eye"></i> 8M+ Visits</span>
+                        <span class="project-stat"><i class="fas fa-star"></i> 4.7/5 Rating</span>
+                    </div>
+                    <div class="project-tags">
+                        <span>Tycoon</span>
+                        <span>Simulation</span>
+                        <span>Strategy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Fantasy Kingdoms">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Play Game</a>
+                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Fantasy Kingdoms</h3>
+                    <p>An epic role-playing adventure where players can explore vast landscapes, complete quests, battle mythical creatures, and build their own kingdoms in a rich fantasy world.</p>
+                    <div class="project-meta">
+                        <span class="project-stat"><i class="fas fa-eye"></i> 7M+ Visits</span>
+                        <span class="project-stat"><i class="fas fa-star"></i> 4.9/5 Rating</span>
+                    </div>
+                    <div class="project-tags">
+                        <span>RPG</span>
+                        <span>Adventure</span>
+                        <span>Fantasy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Create Something Amazing</h3>
+                <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-detail">
+                            <h4>Email</h4>
+                            <p>darksoulpaintings@gmial.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fab fa-discord"></i></div>
+                        <div class="contact-detail">
+                            <h4>Discord</h4>
+                            <p>darkstream06</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fab fa-twitter"></i></div>
+                        <div class="contact-detail">
+                            <h4>Twitter</h4>
+                            <p>@darkstream06</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-reddit-alien"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">D</div>
+                <span>Darkstream</span>
+            </div>
+            <p class="footer-tagline">Crafting immersive digital experiences</p>
+            <div class="footer-divider"></div>
+            <p class="copyright">© 2025 Darkstream. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
