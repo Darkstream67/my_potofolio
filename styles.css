@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 :root {
     --primary-color: #ff6b6b;
@@ -1411,4 +1412,39 @@ footer {
 * {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer/Edge */
+}
+
+
+
+
+
+
+
+#canvas1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;  /* Ensures canvas is behind all content */
+}
+
+.ggg {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(138, 43, 226, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(20px); /* Blur background */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0.5; /* Slight transparency */
+}
+
+/* Makes everything inside ggg more blurry */
+.ggg * {
+    filter: blur(2px); /* Increase the blur for content inside */
 }
