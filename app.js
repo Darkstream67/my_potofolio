@@ -1,8 +1,3 @@
-
-
-
-
-
 // DOM Elements
 const loadingScreen = document.querySelector('.loading-screen');
 const progressBar = document.querySelector('.progress');
@@ -109,6 +104,7 @@ function simulateLoading() {
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
                     document.body.classList.add('loaded');
+                    document.body.classList.remove('no-scroll'); // Enable scrolling
                     
                     // Animate sections
                     animateSections();
@@ -136,6 +132,7 @@ function simulateLoading() {
 
 // Initialize everything when the page loads
 window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('no-scroll'); // Disable scrolling
     // Simulate loading
     simulateLoading();
     
@@ -151,7 +148,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Handle contact form (if you choose to implement it later)
     // handleContactForm();
 });
-
 
 
 
