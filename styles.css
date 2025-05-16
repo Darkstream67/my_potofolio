@@ -39,9 +39,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-body.no-scroll {
-    overflow: hidden;
-}
 body::before {
     content: '';
     position: fixed;
@@ -1188,7 +1185,100 @@ footer {
 }
 
 /* Extra Small Screens */
-@media (max-width: 480px) {
+
+/* Mobile responsiveness for hero-text */
+@media screen and (max-width: 480px) {
+
+
+
+  
+
+
+  .hero-text {
+    width: 80em;
+
+    text-align:center;
+    padding: 200px 100px;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+  .hero-text h2 {
+    
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .hero-text p {
+    text-align: center;
+    font-size: 1em;
+    padding-left: 50px;
+    margin-bottom: 100px;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1em;
+    padding: 12px;
+  }
+
+
+  /* hero about */
+
+
+  .about-content {
+    flex-direction:column; /* Makes text appear first, image second */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .about-text {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .about-image {
+    width: 100%;
+    align-items: center;
+  }
+
+  .image-frame {
+    
+    align-items: center;
+
+    max-width: 100%; /* adjust based on your design */
+    width: 100%;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .stat-box {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+ 
+}
+
+
+/* @media (max-width: 480px) {
     h1 {
         font-size: 2.5rem;
     }
@@ -1214,7 +1304,7 @@ footer {
     .social-links {
         justify-content: center;
     }
-}
+} */
 
 /* ========================
    Animations
@@ -1491,6 +1581,8 @@ footer {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer/Edge */
 }
+
+
 
 
 
